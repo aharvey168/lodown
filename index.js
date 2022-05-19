@@ -42,9 +42,9 @@ function typeOf(value) {
 module.exports.typeOf = typeOf;
  
 //////////FIRST//////////
-/**first: function takes in an array and number as an argument and return first item in array
+/**first: function takes in an array and number as an argument and return first number of elements in array
 *@param {array, number} value: Function takes in an array and a number as Inputs
-*@returns {first element in array}
+*@returns {first number of element in array}
 **/
 function first(array, number) {
    
@@ -65,9 +65,9 @@ function first(array, number) {
 module.exports.first = first;
  
 //////////LAST//////////
-/**last: function takes in an array and a number as an argument and returns the last items of array
+/**last: function takes in an array and a number as an argument and returns the last number of elements of array
 *@param {array, number} value: Function takes in an array and a number as Inputs
-*@returns {last element in array}
+*@returns {last number of element in array}
 **/
 function last(array, number) {
     //If <array> is not an array, return []
@@ -168,8 +168,8 @@ function unique(array) {
 module.exports.unique = unique;
  
 /**
- * filter: function with a call function on each element in the array and
- * returns a new array of elements with a function call of true.
+ * filter: function that iterates through an array and with a call function on each element in the array 
+ * If the array element returns true when passed into the ester function, the elements is pushed into an output array
  *
  * @param {Array} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
@@ -193,8 +193,8 @@ module.exports.unique = unique;
 module.exports.filter = filter;
  
 /**
- * reject: function with a call function on each element in the array and
- * returns a new array of elements with a function call of false.
+ * reject: function that iterates through an array and with a call function on each element in the array 
+ * If the array element returns false when passed into the ester function, the elements is pushed into an output array
  *
  * @param {Array} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
@@ -217,14 +217,14 @@ module.exports.filter = filter;
 module.exports.reject = reject;
  
 /**
- * partition: function with a call function on each element in the array and
- * returns an of arrays.
+ * partition: iterates through an array and calls a tester function on each element. If the current element returns true, it is pushed into aubarray
+ * in an output arry. If the current element returns false, it is pushed into a separate subAray in an output array,
  *
  * @param {Array} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
  * collection
- * @return {array} a new array of the elements for which calling the function
- * returns an array of arrays
+ * @return {array} a new array of subarrays contains all elements from the input array that returned true when passed into the tester function
+ * and another subArray that contains all the elements from the input array that returned false.
  */
  
 function partition(array, func) {
@@ -244,8 +244,8 @@ function partition(array, func) {
 module.exports.partition = partition;
  
 /**
- * map: function with a call function on each element in the array and
- * returns an of arrays.
+ * map: iterates through a colection and collects a function on each element. As the elements are modified, they are pushed in an 
+ * output array. The output array is returned.
  *
  * @param {array of objects}: map through objects in the array
  * @param {value of property}: properrty of every element in the array
@@ -276,12 +276,12 @@ function map(collection,func) {
 module.exports.map = map;
  
 /**
- * pluck: function that maps through an array and returns and array of every elements that
- * contains a specific energy
+ * pluck: function that takes in an array of objects and a target property that is in each object.  
+ * Then returns an array of values of the target property of each object.
  *
  * @param {array of objects}: map through objects in the array
  * @param {value of property}: properrty of every element in the array
- * @return {array}: a new array with a function call on each
+ * @return {array}: an array each object's values of the target property
  */
  
  function pluck(array, prop) {
@@ -295,13 +295,13 @@ module.exports.map = map;
 module.exports.pluck = pluck;
  
 /**
- * every: function that maps through an collection and returns and array of every elements that
- * contains a specific energy
+ * every: function that iterates through every element. If the elements returns true when passed into the tester function,,,,,,
+ * the function returns true. Otherwise it returns false.
  *
  * @param {collection}: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
  * collection
- * @return {boolean}: return true for every element is true
+ * @return {boolean}: return true for every element returns true when passed into the tester function
  */
  
  function every(collection, func) {
@@ -341,7 +341,7 @@ module.exports.every = every;
  
 /**
  * some: function that iterates through an collection and returns true if the
- * collection has 1 of the elements
+ * collection has atleast 1 of the elements returns true when passed into the tter function.
  *
  * @param {collection}: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
@@ -392,14 +392,13 @@ module.exports.every = every;
     module.exports.some = some;
  
 /**
- * reduce: callback function on each element in the array that returns a
- * single value
+ * reduce: callback function iterates through an array and calls the callback  function to create a single sum of the return value
  *
  * @param {array}: The collection over which to iterate.
  * @param {func} action: The Function to be applied to each value in the
  * collection
  * @param {seed}: initial value, previous result
- * @return {value}: accumulation of values
+ * @return {value}: a final sum or accumulation of values from the final function call of the callback function
  */
  
  function reduce(array, func, seed) {
@@ -424,13 +423,11 @@ module.exports.every = every;
  module.exports.reduce = reduce;
  
  /**
- * reduce: callback function on each element in the array that returns a
- * single value
- *
+ * extend: takes in two  or more input objects, merges/copies the values of the objects and uses them in the trget object. 
  * @param {object}: destination object
  * @param {multiple objects}: source objects
- * @return {object}:  returns a copy all of the properties of the
- * source objects over the destination object, and return the destination object.
+ * @return {object}:  it returns a copy all of the properties of the source objects over 
+ * the destination object, and return the destination object modified 
  */
   function extend(...inputs) { // spread operator takes all of hte objects and puts them in an array
     //copy properties from object 1 to object 2
