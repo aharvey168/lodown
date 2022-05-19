@@ -249,7 +249,7 @@ module.exports.partition = partition;
  *
  * @param {array of objects}: map through objects in the array
  * @param {value of property}: properrty of every element in the array
- * @return {array}: a new array with a function cal on each
+ * @return {array}: a new array with the result of the function call on each element in the input array
  */
 function map(collection,func) {
     //create output array
@@ -346,7 +346,7 @@ module.exports.every = every;
  * @param {collection}: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the
  * collection
- * @return {boolean}: return true for 1 true element
+ * @return {boolean}: return true if atleast 1 element returns true when passed into the input tester function
  */
  
  function some(collection, func) {
@@ -392,13 +392,13 @@ module.exports.every = every;
     module.exports.some = some;
  
 /**
- * reduce: callback function iterates through an array and calls the callback  function to create a single sum of the return value
+ * reduce: callback function iterates through an array and calls the callback  function to accumulate a single return value
  *
  * @param {array}: The collection over which to iterate.
  * @param {func} action: The Function to be applied to each value in the
  * collection
  * @param {seed}: initial value, previous result
- * @return {value}: a final sum or accumulation of values from the final function call of the callback function
+ * @return {value}: accumulation of values from the final function call of the callback function
  */
  
  function reduce(array, func, seed) {
